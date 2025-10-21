@@ -132,16 +132,8 @@ const MobileSearchBar: React.FC<MobileSearchBarProps> = ({ className = "" }) => 
         >
           <div className="flex flex-col h-full">
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-100">
+            <div className="flex items-center justify-center p-4 border-b border-gray-100">
               <h2 className="text-lg font-semibold text-gray-900">Search Hotels</h2>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="h-8 w-8 rounded-full hover:bg-gray-100"
-              >
-                <X className="h-4 w-4" />
-              </Button>
             </div>
 
             {/* Search Form */}
