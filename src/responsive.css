@@ -1,0 +1,688 @@
+/* Mobile Responsiveness Fixes for HotelRBS */
+
+/* ==========================================================================
+   MOBILE BREAKPOINTS
+   ========================================================================== */
+
+/* Mobile First Approach */
+@media (max-width: 480px) {
+  /* Extra small devices (phones, 320px and up) */
+  
+  /* Typography adjustments */
+  .text-3xl {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.4 !important;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.3 !important;
+  }
+  
+  .text-lg {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.3 !important;
+  }
+  
+  /* Header adjustments */
+  header {
+    padding: 0.5rem 1rem !important;
+  }
+  
+  /* Logo responsive sizing */
+  header img {
+    max-height: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+  }
+  
+  /* Navigation spacing */
+  .flex.items-center.space-x-4 {
+    gap: 0.5rem !important;
+  }
+  
+  /* Button touch targets - minimum 44x44px */
+  button, .btn, [role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Search bar adjustments */
+  .search-container, .search-bar {
+    width: 100% !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* Cards in Browse by Category - 2 per row on mobile */
+  .grid.grid-cols-2 {
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* Hotel cards - 1 per row on mobile */
+  .grid.grid-cols-1 {
+    gap: 1rem !important;
+  }
+  
+  /* Section padding adjustments */
+  section {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  /* Container padding */
+  .w-full.max-w-none.px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Footer adjustments */
+  footer .grid.grid-cols-1 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Chat widget positioning */
+  .chatbot-container, .animated-avatar {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+  
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  /* Image responsiveness */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* Card aspect ratios for mobile */
+  .aspect-\[4\/3\] {
+    aspect-ratio: 4/3 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Small devices (landscape phones, 576px and up) */
+  
+  /* Typography scaling */
+  .text-3xl {
+    font-size: 1.75rem !important; /* 28px */
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem !important; /* 24px */
+  }
+  
+  /* Header adjustments */
+  header {
+    padding: 0.75rem 1.5rem !important;
+  }
+  
+  /* Logo sizing */
+  header img {
+    max-height: 45px !important;
+    height: 45px !important;
+  }
+  
+  /* Navigation improvements */
+  .mobile-menu {
+    display: block !important;
+  }
+  
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Cards responsive grid */
+  .grid.grid-cols-2.md\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Hotel cards grid */
+  .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-6 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Section spacing */
+  section {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  /* Container adjustments */
+  .w-full.max-w-none.px-6.lg\\:px-12.xl\\:px-16 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Button sizing */
+  button, .btn {
+    min-height: 44px !important;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Footer responsive */
+  footer .grid.grid-cols-1.md\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Chat widget adjustments */
+  .chatbot-container {
+    bottom: 1.5rem !important;
+    right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Medium devices (tablets, 768px and up) */
+  
+  /* Cards in Browse by Category - 4 per row on tablet */
+  .grid.grid-cols-2.md\\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  /* Hotel cards - 3 per row on tablet */
+  .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  /* Footer - 4 columns on tablet */
+  footer .grid.grid-cols-1.md\\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ==========================================================================
+   SPECIFIC COMPONENT FIXES
+   ========================================================================== */
+
+/* Header/Navbar Mobile Fixes */
+@media (max-width: 768px) {
+  /* Ensure hamburger menu is visible */
+  .lg\\:hidden {
+    display: flex !important;
+  }
+  
+  /* Hide desktop navigation on mobile */
+  .hidden.lg\\:flex {
+    display: none !important;
+  }
+  
+  /* Mobile menu sheet adjustments */
+  .w-\\[300px\\] {
+    width: 280px !important;
+    max-width: 90vw !important;
+  }
+  
+  /* Language selector adjustments */
+  .hidden.md\\:flex {
+    display: none !important;
+  }
+  
+  /* Profile menu adjustments */
+  .mobile-profile-menu {
+    display: flex !important;
+  }
+}
+
+/* Browse by Category Cards Responsive */
+@media (max-width: 480px) {
+  .browse-category-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  .category-card {
+    min-height: 120px !important;
+  }
+  
+  .category-card h3 {
+    font-size: 0.875rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .category-card p {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-category-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  .category-card {
+    min-height: 140px !important;
+  }
+}
+
+/* Hotel Cards Responsive */
+@media (max-width: 480px) {
+  .hotel-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .hotel-card {
+    min-height: auto !important;
+  }
+  
+  .hotel-card img {
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+  
+  .hotel-card h3 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .hotel-card .price {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hotel-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Images and Media Responsive */
+@media (max-width: 480px) {
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* Aspect ratio containers */
+  .aspect-\\[4\\/3\\] {
+    aspect-ratio: 4/3 !important;
+    width: 100% !important;
+  }
+  
+  /* Background images */
+  .bg-cover, .bg-center {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+/* Typography Responsive */
+@media (max-width: 480px) {
+  /* Headings */
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Body text */
+  p, span, div {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Small text */
+  .text-sm {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Buttons and Interactive Elements */
+@media (max-width: 480px) {
+  /* Ensure adequate touch targets */
+  button, .btn, [role="button"], a[role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+    border-radius: 0.5rem !important;
+  }
+  
+  /* Icon buttons */
+  button[class*="size-icon"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem !important;
+  }
+  
+  /* Input fields */
+  input, textarea, select {
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 480px) {
+  footer {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  footer h3, footer h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  footer ul {
+    gap: 0.75rem !important;
+  }
+  
+  footer li {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Footer bottom section */
+  footer .flex.flex-col.md\\:flex-row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* Chat Widget and Footer Positioning */
+@media (max-width: 480px) {
+  /* Ensure chat widget doesn't overlap content */
+  .chatbot-container, .animated-avatar {
+    position: fixed !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    z-index: 1000 !important;
+  }
+  
+  /* Add bottom padding to prevent overlap */
+  body {
+    padding-bottom: 80px !important;
+  }
+  
+  /* Footer spacing */
+  footer {
+    margin-top: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatbot-container, .animated-avatar {
+    bottom: 1.5rem !important;
+    right: 1.5rem !important;
+  }
+  
+  body {
+    padding-bottom: 100px !important;
+  }
+}
+
+/* Mobile Search Bar Styles */
+.mobile-search-bar {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mobile-search-bar button {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.mobile-search-bar button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Mobile Search Sheet */
+.mobile-search-bar [data-state="open"] {
+  animation: slideUp 0.3s ease-out !important;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Search Form Styles */
+.mobile-search-bar .space-y-6 > div {
+  margin-bottom: 1.5rem !important;
+}
+
+.mobile-search-bar label {
+  font-weight: 500 !important;
+  color: #374151 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mobile-search-bar input,
+.mobile-search-bar button {
+  border-radius: 0.5rem !important;
+  border: 1px solid #d1d5db !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.mobile-search-bar input:focus,
+.mobile-search-bar button:focus {
+  outline: none !important;
+  border-color: #165d31 !important;
+  box-shadow: 0 0 0 3px rgba(22, 93, 49, 0.1) !important;
+}
+
+/* Dropdown Menu Styles */
+.mobile-search-bar [data-radix-dropdown-menu-content] {
+  border-radius: 0.5rem !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.mobile-search-bar [data-radix-dropdown-menu-item] {
+  padding: 0.75rem 1rem !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease-in-out !important;
+}
+
+.mobile-search-bar [data-radix-dropdown-menu-item]:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Search Button Styles */
+.mobile-search-bar .search-button {
+  background: linear-gradient(135deg, #165d31, #1a6b38) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 4px rgba(22, 93, 49, 0.2) !important;
+}
+
+.mobile-search-bar .search-button:hover {
+  background: linear-gradient(135deg, #134a28, #165d31) !important;
+  box-shadow: 0 4px 8px rgba(22, 93, 49, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Search Bar Responsive */
+@media (max-width: 480px) {
+  /* Mobile search bar */
+  .mobile-search-container {
+    width: 100% !important;
+    padding: 0.5rem !important;
+  }
+  
+  .mobile-input {
+    font-size: 1rem !important;
+    padding: 0.75rem !important;
+    min-height: 44px !important;
+  }
+  
+  .mobile-button {
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Mobile search bar adjustments for very small screens */
+  .mobile-search-bar {
+    padding: 0.5rem !important;
+  }
+
+  .mobile-search-bar button {
+    height: 3.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .mobile-search-bar .space-y-6 > div {
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile search bar for tablets */
+  .mobile-search-bar {
+    padding: 0.75rem !important;
+  }
+
+  .mobile-search-bar button {
+    height: 3.75rem !important;
+  }
+}
+
+/* Prevent Horizontal Scrolling */
+@media (max-width: 480px) {
+  * {
+    max-width: 100% !important;
+  }
+  
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  
+  .container, .w-full {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Section Spacing Adjustments */
+@media (max-width: 480px) {
+  section {
+    padding: 1rem 0.75rem !important;
+    margin: 0 !important;
+  }
+  
+  .py-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  .py-10 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .mb-8, .mb-12 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .py-8 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .py-10 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .mb-8, .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY AND USABILITY IMPROVEMENTS
+   ========================================================================== */
+
+/* Ensure proper contrast and readability on mobile */
+@media (max-width: 480px) {
+  /* Improve text contrast */
+  .text-muted-foreground {
+    color: #6b7280 !important;
+  }
+  
+  /* Ensure links are easily tappable */
+  a {
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  
+  /* Improve focus states */
+  button:focus, input:focus, a:focus {
+    outline: 2px solid #165d31 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+  .transition-all, .transition-transform, .transition-opacity {
+    transition-duration: 0.2s !important;
+  }
+  
+  .hover\\:scale-105:hover {
+    transform: scale(1.02) !important;
+  }
+  
+  .hover\\:scale-\\[1\\.02\\]:hover {
+    transform: scale(1.01) !important;
+  }
+}
